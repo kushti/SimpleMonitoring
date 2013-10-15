@@ -1,6 +1,5 @@
 package controllers
 
-import play.api._
 import play.api.mvc._
 import scala.concurrent.ExecutionContext
 import ExecutionContext.Implicits.global

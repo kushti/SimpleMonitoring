@@ -5,9 +5,6 @@ import play.api.libs.json._
 import Json._
 import org.joda.time.DateTime
 import org.chepurnoy.timeseries._
-import mongo.MongoOperations
-import play.api.Play
-import collection.JavaConversions._
 
 object RestActions extends Controller with SettingsMongo{
   //todo: def get = Action{}

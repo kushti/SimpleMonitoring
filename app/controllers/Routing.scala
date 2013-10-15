@@ -20,6 +20,5 @@ object Routing extends PlayNavigator {
 
   val json = new Namespace("json"){
     val post = POST on root to controllers.RestActions.post _
-    //val details = GET on root / * to controllers.RestActions.get _
   }
 }

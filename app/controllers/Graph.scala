@@ -1,11 +1,8 @@
 package controllers
 
-import play.api._
 import play.api.mvc._
 import scala.concurrent.ExecutionContext
 import ExecutionContext.Implicits.global
-import play.api.data._
-import play.api.data.Forms._
 import org.chepurnoy.timeseries.{TimeSeriesData, TimeSeriesDoubleDatum}
 
 object Graph extends Controller with SettingsMongo{
