@@ -1,0 +1,13 @@
+This is your new Play application
+=====================================
+
+This file will be packaged with your application, when using `play dist`.
+
+TEST DATA
+
+curl -X POST -H "Content-type: application/json" -d '{"value":0,"basket":"basket","timestamp":1381436764000}' http://localhost:9000/json/
+curl -X POST -H "Content-type: application/json" -d '{"value":77,"basket":"basket","timestamp":1381436744000}' http://localhost:9000/json/
+curl -X POST -H "Content-type: application/json" -d '{"value":50,"basket":"basket","timestamp":1381436754000}' http://localhost:9000/json/
+curl -X POST -H "Content-type: application/json" -d '{"value":5,"basket":"basket","timestamp":1381436774000}' http://localhost:9000/json/
+curl -X POST -H "Content-type: application/json" -d '{"value":8,"basket":"basket","timestamp":1381436784000}' http://localhost:9000/json/
+curl -X POST -H "Content-type: application/json" -d '{"value":30,"basket":"basket","timestamp":1381436794000}' http://localhost:9000/json/

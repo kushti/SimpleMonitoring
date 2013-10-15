@@ -1,0 +1,50 @@
+@(baskets:List[String])
+
+@main("Welcome") {
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">TSWEB</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <div id="basket" class="navbar-form navbar-left">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="table">Table</a></li>
+                    <li><a href="#" id="graph">Graph</a></li>
+                    <li>
+                        <select class="form-control col-lg-8" name="basket" id="select">
+                            <option disabled>Select basket</option>
+                            @baskets.map{ basket=>
+                            <option>@basket</option>
+                            }
+                        </select>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="content">
+</div>
+<script type="text/javascript">
+    $("#table").click(function(){
+        var basket = $("select").val();
+        $("#content").load( "/table/" + basket,
+        function( response, status, xhr ) {
+            if (status == "error") {
+                $("#content").html( "Sorry but there was an error:" + xhr.status + " " + xhr.statusText);
+            }
+        });
+    });
+    $("#graph").click(function(){
+        var basket = $("select").val();
+        $("#content").load( "/graph/" + basket ,
+            function( response, status, xhr ) {
+            if (status == "error") {
+            $("#content").html( "Sorry but there was an error:" + xhr.status + " " + xhr.statusText);
+            }
+        });
+    });
+</script>
+}

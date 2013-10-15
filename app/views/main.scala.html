@@ -1,0 +1,19 @@
+@(title: String)(content: Html)
+
+@import controllers.Routing
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@Routing.assets("stylesheets/bootstrap.css")">
+        <link rel="shortcut icon" type="image/png" href="@Routing.assets("images/favicon.png")">
+        <script src="@Routing.assets("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@Routing.assets("javascripts/highcharts.js")" type="text/javascript"></script>
+        <script src="@Routing.assets("javascripts/bootstrap.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        @content
+    </body>
+</html>

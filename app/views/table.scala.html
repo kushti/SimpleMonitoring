@@ -1,0 +1,22 @@
+@(dataTimestamp:org.chepurnoy.timeseries.TimeSeriesData)
+
+@import org.chepurnoy.timeseries._
+
+<div class="page-header">
+    <h1 id="tables">@dataTimestamp.basket</h1>
+</div>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Value</th>
+        <th>Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    @dataTimestamp.data.map{ datum=>
+     <tr>
+        <td>@datum.value</td>
+        <td>@datum.timestamp</td>
+     </tr>
+     }
+</table>
