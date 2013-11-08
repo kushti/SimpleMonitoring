@@ -17,7 +17,7 @@ object ApplicationBuild extends Build {
   val main = play.Project(appName, appVersion, appDependencies).settings(
     scalaVersion := "2.10.2",
     resolvers += "teamon.eu repo" at "http://repo.teamon.eu",
-    resolvers +=  "Local Repository" at "file:///" + baseDirectory.value + "/repository",
+    resolvers += "time series" at "http://kushti.github.io/repository",
     resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/snapshots",
       "releases"  at "http://oss.sonatype.org/content/repositories/releases")
   )
