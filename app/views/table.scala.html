@@ -1,6 +1,7 @@
 @(dataTimestamp:org.chepurnoy.timeseries.TimeSeriesData)
 
 @import org.chepurnoy.timeseries._
+@import org.joda.time.format.DateTimeFormat
 
 <div class="page-header">
     <h1 id="tables">@dataTimestamp.basket</h1>
@@ -16,7 +17,7 @@
     @dataTimestamp.data.map{ datum=>
      <tr>
         <td>@datum.value</td>
-        <td>@datum.timestamp</td>
+        <td>@DateTimeFormat.forPattern("HH:mm:ss' 'MM-dd-yyyy").print(datum.timestamp)</td>
      </tr>
      }
 </table>
