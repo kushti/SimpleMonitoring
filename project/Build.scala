@@ -7,8 +7,6 @@ object ApplicationBuild extends Build {
   val appName         = "SimpleMonitoring"
   val appVersion      = "0.1"
 
-
-
   val appDependencies = Seq(
     "eu.teamon" %% "play-navigator" % "0.5.0",
     "timeseries" %% "timeseries" % "0.1.8" exclude("org.scala-stm", "scala-stm_2.10.0")

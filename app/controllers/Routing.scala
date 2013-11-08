@@ -15,7 +15,8 @@ object Routing extends PlayNavigator {
   }
 
   val graph = new Namespace("graph"){
-    val post = GET on  root / * to controllers.Graph.get
+    val post2 = GET on  root / * / *  to controllers.Graph.get
+    val post1 = GET on  root / * to controllers.Graph.get
   }
 
   val json = new Namespace("json"){

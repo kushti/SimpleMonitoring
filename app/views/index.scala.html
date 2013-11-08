@@ -28,23 +28,33 @@
 <div id="content">
 </div>
 <script type="text/javascript">
+
+    function loadContent(url){
+        $("#content").load( url,
+            function( response, status, xhr ) {
+                if (status == "error")
+                    $("#content").html( "Sorry but there was an error:" + xhr.status + " " + xhr.statusText);
+            }
+        );
+    };
+
     $("#table").click(function(){
         var basket = $("select").val();
-        $("#content").load( "/table/" + basket,
-        function( response, status, xhr ) {
-            if (status == "error") {
-                $("#content").html( "Sorry but there was an error:" + xhr.status + " " + xhr.statusText);
-            }
-        });
+        loadContent("/table/" + basket);
+        $.cookie("tab","table");
     });
+
     $("#graph").click(function(){
         var basket = $("select").val();
-        $("#content").load( "/graph/" + basket ,
-            function( response, status, xhr ) {
-            if (status == "error") {
-            $("#content").html( "Sorry but there was an error:" + xhr.status + " " + xhr.statusText);
-            }
-        });
+        loadContent("/graph/" + basket);
+        $.cookie("tab","graph");
+
+    });
+
+    $("select").change(function() {
+        var basket = $("select").val();
+        if($.cookie("tab") == "graph") loadContent("/graph/" + basket);
+        else loadContent("/table/" + basket);
     });
 </script>
 }

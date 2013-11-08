@@ -1,9 +1,13 @@
-@(dataTimestamp:org.chepurnoy.timeseries.TimeSeriesData)
+@(dataTimestamp:org.chepurnoy.timeseries.TimeSeriesData,number:Integer)
 
 @import org.chepurnoy.timeseries._
 
 <div class="page-header">
-    <h1 id="tables">@dataTimestamp.basket</h1>
+    <h3 id="tables">Number points in graph</h3>
+    <div class="input-prepend input-append">
+        <input type="text" placeholder="Number Points" class="numberPoints" value="@number" >
+        <button class="btn sent" type="button">OK</button>
+    </div>
 </div>
 <div id="chart">
 </div>
@@ -22,7 +26,7 @@
                 type: 'datetime',
                 labels: {
                     formatter: function () {
-                        return Highcharts.dateFormat('%a %d %b %H:%M', this.value);
+                        return Highcharts.dateFormat('%d %b %H:%M', this.value);
                     },
                     dateTimeLabelFormats: {
                         minute: '%H:%M',
@@ -46,5 +50,11 @@
                     })()
             }]
         });
-    })
+    });
+
+    $(".sent").click(function(){
+        var basket = $("select").val();
+        var number = $(".numberPoints").val();
+        loadContent("/graph/" + basket + "/" + number);
+    });
 </script>
