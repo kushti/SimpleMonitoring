@@ -1,9 +1,16 @@
-This is your new Play application
+Simple Monitoring
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+Simple Monitoring Written in Scala On the Top of Akka Framework.
 
-TEST PUT DATA
+Properties of apps in file "application.conf"
+
+# Mongo servers (Replica Set)
+server.names = [localhost]
+# Database name to get baskets from
+db.name=test
+
+TEST PUT DATA via REST
 
 curl -X POST -H "Content-type: application/json" -d '{"value":0,"basket":"basket","timestamp":1381436764000}' http://localhost:9000/json/
 curl -X POST -H "Content-type: application/json" -d '{"value":77,"basket":"basket","timestamp":1381436744000}' http://localhost:9000/json/
@@ -14,3 +21,4 @@ curl -X POST -H "Content-type: application/json" -d '{"value":30,"basket":"baske
 
 TEST GET DATA
 curl -X GET -H "Content-type: application/json" -d '{"basket":"basket","count":5}' http://localhost:9000/json/
+
