@@ -6,7 +6,7 @@ import play.navigator._
 // Main router
 object Routing extends PlayNavigator {
 
-  val assets = GET on "assets" / ** to { s: String => Assets.at(path="/public", s)}
+  val assets = GET on "assets" / ** to { s: String => Assets.at(path="/public", file = s)}
 
   val home = GET on root to controllers.WebActions.index _
 
