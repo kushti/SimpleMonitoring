@@ -12,6 +12,6 @@ trait SettingsMongo {
   val servers = Play.current.configuration.getStringList("server.names").
     map(_.toList).getOrElse(List("localhost"))
 
-  val db = new MongoOperations(servers,dbName)
+  val db = new MongoOperations(servers, dbName)
 
 }
