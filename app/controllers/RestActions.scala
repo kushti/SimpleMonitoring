@@ -21,8 +21,7 @@ object RestActions extends Controller with SettingsMongo {
         case s: JsString => TimeSeriesStringDatum(s.value, time)
       }
       db.put(basket, tsDatum)
-      val result = toJson("ok")
-      Ok(result)
+      Ok(toJson("ok"))
     } catch {
       case t: Throwable => BadRequest(s"Exception during process json: $t")
     }
