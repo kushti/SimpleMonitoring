@@ -49,7 +49,7 @@ class BasketsWatcher extends Actor with SettingsMongo with MailSettings with Bas
     case SendMail(basket, datum, urgent) =>
       val timeStr = datum.timestamp.withZone(DateTimeZone.UTC).toString()
 
-      val title = if(urgent) "URGENT! " else "" + s"$basket: Verification server got problem @ $timeStr"
+      val title = (if(urgent) "URGENT! " else "") + s"$basket: Verification server got problem @ $timeStr"
       val body = datum.value.toString
 
       val (oldBody, oldTime) = cache.getOrElse(basket, "" -> new DateTime())
