@@ -5,7 +5,7 @@
     <artifactId>timeseries_2.10</artifactId>
     <packaging>jar</packaging>
     <description>timeseries</description>
-    <version>0.1.9</version>
+    <version>0.1.11</version>
     <name>timeseries</name>
     <organization>
         <name>org.chepurnoy</name>

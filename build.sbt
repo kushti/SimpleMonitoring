@@ -20,7 +20,8 @@ resolvers ++= Seq("teamon.eu repo" at "http://repo.teamon.eu",
 
 libraryDependencies ++= Seq(
     "eu.teamon" %% "play-navigator" % "0.5.0",
-    "org.chepurnoy" %% "timeseries" % "0.1.9" exclude("org.scala-stm", "scala-stm_2.10.0")
+    "com.mandrillapp.wrapper.lutung" % "lutung" % "0.0.5",
+    "org.chepurnoy" %% "timeseries" % "0.1.11" exclude("org.scala-stm", "scala-stm_2.10.0")
 )
 
  
