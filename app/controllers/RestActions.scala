@@ -62,8 +62,7 @@ object RestActions extends Controller with SettingsMongo with MailSettings {
                 case s: TimeSeriesStringDatum => toJson(s.value)
               }),
               "Time" -> toJson(ts.timestamp.getMillis / 1000)
-            )
-            }
+            )}
           )
         ))
         Ok(jsonResult)

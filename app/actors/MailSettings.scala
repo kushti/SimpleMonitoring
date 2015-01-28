@@ -15,7 +15,6 @@ trait MailSettings {
   lazy val gapUrgent = conf.getInt("mail.gap.urgent").getOrElse(30)
 }
 
-
 trait BasketSettings {
   private val conf = Play.current.configuration
 
